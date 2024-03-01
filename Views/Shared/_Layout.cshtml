@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@RenderSection("Title", false) - PoliziaMunicipale</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PoliziaMunicipale.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PoliziaMunicipale</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Aggiungi
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Add">Crea una nuova Multa</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="AddAnagrafica">Aggiungi Trasgressore</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Verbali
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Query" asp-action="VerbaliTrasgre">Verbali trasgressori</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Query" asp-action="TrasgrePunti">Punti Trasgressione</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Query" asp-action="Punti">Violazioni oltre i 10 punti</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Query" asp-action="FiltroImporto">Violazioni 4000 euro</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-4">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Polizia Municipale</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Chi siamo</a></li>
+                        <li><a href="#" class="footer-link">Contatti</a></li>
+                        <li><a href="#" class="footer-link">Uffici</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Servizi Online</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="footer-link">Denunce online</a></li>
+                        <li><a href="#" class="footer-link">Prevenzione crimine</a></li>
+                        <li><a href="#" class="footer-link">Richiesta documenti</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Seguici</h5>
+                    <ul class="list-unstyled social-icons">
+                        <li><a href="#" class="footer-icon"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="footer-icon"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="footer-icon"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="text-muted text-center">&copy; 2024 - Polizia Municipale - <a href="#" class="footer-link">Privacy</a></p>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

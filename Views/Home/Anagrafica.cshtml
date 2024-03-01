@@ -1,0 +1,27 @@
+﻿﻿@{
+    ViewData["Title"] = "Anagrafica Trasgressore";
+}
+
+<h2>Anagrafica</h2>
+
+@if (Model != null)
+{
+    <div class="card mb-3" style="max-width: 700px;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img src="https://th.bing.com/th/id/OIP.oXzqq6dnQIUDZyv3Pha69QHaHa?rs=1&pid=ImgDetMain" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">@Model.Nome @Model.Cognome - @Model.IDAnagrafica</h5>
+                    <p class="card-text">@Model.Indirizzo - @Model.Citta - @Model.CAP</p>
+                    <p class="card-text"><small class="text-body-secondary">@Model.Cod_Fisc</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <p>Utente non trovato o ID non valido.</p>
+}
