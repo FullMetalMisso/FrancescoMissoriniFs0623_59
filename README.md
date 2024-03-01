@@ -5,4 +5,4 @@ Click tasto destro su Database
 Click su "importa applicazioni livello dati"
 Click avanti
 Nella directory del file cercare la cartella DATABASEIMPORT e selezionare il file
-selezionare avanti fino alla fine
+selezionare avanti fino alla  fine
